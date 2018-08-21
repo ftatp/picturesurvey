@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+.done {
+	margin-top: 200px;
+}
+</style>
+
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="done col-sm-9 align-self-center text-center border border-white p-5" action="" method="post">
+			<p class="h1 mb-4">Done. Thank you</p>
+			<p class="h1 mb-4">ID code: {{ id_code }}</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

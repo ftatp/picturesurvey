@@ -1,0 +1,5 @@
+*.pyc
+*.sqlite3
+picturelikesurvey/__pycache/
+survey/migrations/
+survey/__pycache__/
