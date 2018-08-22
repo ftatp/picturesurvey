@@ -63,11 +63,11 @@ def index(request):
 			for pic_explain in data['picture_list']:
 				if str(picnum).zfill(4) in re.findall(r'\d+', pic_explain['path']):
 					pattern = re.compile("\(\)")
-					caption = re.sub(pattern, pic_explain['caption'])
+					caption = re.sub(pattern, '', pic_explain['caption'])
 					tag_list = ' '.join(pic_explain['tag_list'])
-
 					break
 
+			jsonfile.close()
 
 		content = {
 			'name': subject_name,
@@ -81,7 +81,7 @@ def index(request):
 			'tag_list': tag_list
 		}
 
-		print(content)
+#print(content)
 		return render(request, 'picture_select.html', content)
 	
 
@@ -98,7 +98,7 @@ def picture_select(request):
 		like_count = int(request.POST['like_count'])
 		picture_path = picture_list[picture_count]
 			
-		print("Path", picture_path)
+#		print("Path", picture_path)
 
 		if "like" in request.POST.keys():
 			like_list += "1 "
@@ -130,6 +130,7 @@ def picture_select(request):
 			caption = ""
 			tag_list = ""
 
+			picture_count += 1
 			picture_path = picture_list[picture_count]
 
 			picnum = re.findall(r'\d+', picture_path.split('/')[-1])
@@ -137,16 +138,16 @@ def picture_select(request):
 
 			with open("static/instagram/data" + str((int(picnum/100) + 1) * 100).zfill(4) + '.json') as jsonfile:
 				data = json.load(jsonfile)
-				
+
 				for pic_explain in data['picture_list']:
 					if str(picnum).zfill(4) in re.findall(r'\d+', pic_explain['path']):
 						pattern = re.compile("\(\)")
 						caption = re.sub(pattern, '', pic_explain['caption'])
 						tag_list = ' '.join(pic_explain['tag_list'])
-
 						break
 
-			picture_count += 1
+					jsonfile.close()
+
 			content = {
 				'name': name,
 				'email': email,
@@ -159,7 +160,7 @@ def picture_select(request):
 				'tag_list': tag_list
 			}
 			
-			print(content)
+			print(caption)
 			return render(request, 'picture_select.html', content)
 
 	else:
