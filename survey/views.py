@@ -111,7 +111,7 @@ def picture_select(request):
 
 			id_code_list = [survey.id_code for survey in surveys]
 
-			code = random.randint(1000,10000)
+			code = random.randint(10000000,100000000)
 			while code in id_code_list:
 				code = random.randint(1000,10000)
 

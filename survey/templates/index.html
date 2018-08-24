@@ -1,22 +1,146 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-.nameform {
-	margin-top: 200px;
+<style>i
+body {
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
 }
+
+
+body {
+	margin-top: 100px;
+}
+
+
+.ccontainer{
+	width: 80%;
+	height: 50%;
+	margin: 20px auto;
+}
+
+.outer{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.inner{
+	background-color:#fff;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#cards_title{
+	/*width: 100%;*/
+	margin: auto;
+	text-align: center;
+}
+
+.contents{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.cards{
+	margin: auto;
+	height: 80%;
+}
+.card{
+	margin: auto;
+	height: 60%;
+//	border-style: none;
+	border-width: 5px;
+}
+
+
 </style>
 
-<div class="container">
-	<div class="row justify-content-center">
-		<form class="nameform col-sm-9 align-self-center text-center border border-light p-5" action="" method="post">
-			{% csrf_token %}
+<body>
+	<div class="text-center container ccontainer">
+		<div class="outer">
+			<div class="inner">
+				<div class="contents">
 		
-			<p class="h4 mb-4">Subscribe</p>
-			<input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="name" placeholder="Name">
-			<input type="email" id="defaultSubscriptionFormEmail" class="form-control mb-4" name="email" placeholder="E-mail">
-			<button class="btn btn-info btn-block" type="submit">Start</button>
-		</form>
+
+					<div class="row justify-content-center">
+						<div class="col-sm-6 align-self-center text-justify border border-white p-5">
+						<p><b>Please choose whether you would LIKE or not pretending the provided photos are newly updated on your SNS feed.</b>
+						<br>
+						<br>
+						<b>Survey Design</b>
+						<br>
+						<br>
+						-   You will see 100 posts maximum, and the survey might be finished early.
+						<br>
+						-   All the posts are extracted from the random Instagram accounts. 
+						<br>
+						-   As a prime rule, you should check the like box after seeing both photo and caption. But, in case of longer captions, you can judge the photo without seeing its caption.
+						<br>
+						<br>
+						<b>Survey Procedures</b>
+						<br>
+						<br>
+						-   If you liked the post, please check <i>Like</i> box and click <i>Next</i>.
+						<br>
+						-   If not, just click <i>Next</i>, please.
+						<br>
+						<br>
+						<b>Survey Precautions</b>
+						<br>
+						<br>
+						-   When you finish the survey, ID Code will pop up on your screen.
+						<br>
+						-   Please fill the 21st questionnaire with your own ID Code. (The survey cannot be done if you leave the field empty!)
+						<br>
+						- Note that only respondents who complete the study will be compensated.</p>
+						</div>
+						<form class="nameform col-sm-6 align-self-center text-center border border-white p-5" action="" method="post">
+							{% csrf_token %}
+							<img></img>
+							<p class="h4 mb-4">Subscribe</p>
+							<input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="name" placeholder="Name">
+							<input type="email" id="defaultSubscriptionFormEmail" class="form-control mb-4" name="email" placeholder="E-mail">
+							<button class="btn btn-info btn-block" type="submit">Start</button>
+
+						</form>
+					</div>			
+			<!--
+						<div class="col-sm-6 align-self-center text-justify border border-white p-5">
+						<p>제시될 사진과 글이 자신의 SNS 피드에 올라왔다는 것을 가정하고, Like 여부를 결정해 주시면 됩니다.
+
+						Survey 구성
+						- 최대 100장 사진이 보이며, Survey가 그 전에 종료될 수도 있습니다.
+						- 해당 사진과 글은 Instagram 공식계정에 있는 포스트를 그대로 가져온 것입니다.
+						- 글과 사진을 모두 보고 판단하는 경우를 원칙으로 하나, 글이 긴 경우는 사진 위주로 판단해주셔도 무방합니다.
+
+						Survey 진행방법
+						- 포스트가 좋다면, like 체크박스를 클릭하시고 Next 버튼을 누르시면 됩니다.
+						- 포스트가 마음에 들지 않으면, Next 버튼만 누르시면 됩니다.
+
+						Survey 주의사항
+						- Survey가 완료되면 ID Code가 생성됩니다.
+						- ID Code는 설문조사 21번 문항에 꼭 적어주셔야 합니다. (ID Code를 넣지 않으면, Survey가 완료되지 않습니다.)
+						</p>
+						</div>
+			-->				
+				</div>
+			</div>
+
+		</div>
 	</div>
-</div>
+</body>
 {% endblock %}

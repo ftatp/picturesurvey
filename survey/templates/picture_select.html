@@ -83,8 +83,7 @@ form {
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-sm-9 align-self-center text-center border border-white p-5">
-			<p class="h4 mb-4">Hello {{ name }}</p>
-			<p class="h4 mb-4">Do you like this picture?</p>
+			<p class="h4 mb-4">Check the bottom-right box if you like this picture<!--<br><br>< {{ picture_count }} / 100 >--></p>
 		</div>
 	</div>
 
@@ -101,7 +100,7 @@ form {
 			{% endif %}
 			<br>
 			<br>
-			<p>tags: <br>{{ tag_list }}</p>
+			<p><b>tags:</b> <br>{{ tag_list }}</p>
 
 			<div class="row align-items-end justify-content-end">
 				<form class="col-sm-5 align-items-end text-center border border-white p-5" action="/survey/picture_select/" method="post">
@@ -123,9 +122,7 @@ form {
 			</div>
 
 		</div>
-
 	</div>
-
 </div>
 
 {% endblock %}
