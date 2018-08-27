@@ -106,12 +106,12 @@ def picture_select(request):
 		else:
 		 	like_list += "0 "
 
-		if like_count == 36 or picture_count == 99:
+		if like_count == 20 or picture_count == 99:
 			surveys = list(Survey.objects.all())
 
 			id_code_list = [survey.id_code for survey in surveys]
 
-			code = random.randint(10000000,100000000)
+			code = random.randint(1000000,10000000)
 			while code in id_code_list:
 				code = random.randint(1000,10000)
 
