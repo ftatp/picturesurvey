@@ -16,8 +16,8 @@ def index(request):
 	if request.method == 'POST':
 		print(request.POST)
 	
-		subject_name = request.POST['name']
-		subject_email = request.POST['email']
+		subject_name = '' # request.POST['name']
+		subject_email = '' #request.POST['email']
 		
 		sel_only5 = list(random.sample(range(18), 8))
 
